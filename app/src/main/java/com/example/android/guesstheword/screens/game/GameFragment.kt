@@ -51,6 +51,7 @@ class GameFragment : Fragment() {
         // create an instance of the GameViewModel
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
+        // set onclick listener
         binding.correctButton.setOnClickListener {
             viewModel.onCorrect()
             updateScoreText()
