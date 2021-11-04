@@ -66,7 +66,7 @@ class GameFragment : Fragment() {
         })
 
         viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
-            binding.wordIsText.text = newWord
+            binding.wordText.text = newWord
         })
 
         return binding.root
