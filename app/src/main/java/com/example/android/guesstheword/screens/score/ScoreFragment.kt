@@ -62,10 +62,7 @@ class ScoreFragment : Fragment() {
 
         // bind view model to the layout
         binding.scoreViewModel = viewModel
-
-        viewModel.finalScore.observe(viewLifecycleOwner, Observer { finalScore ->
-            binding.scoreText.text = finalScore.toString()
-        })
+        binding.lifecycleOwner = this
 
         viewModel.eventPlayAgain.observe(viewLifecycleOwner, Observer { playAgain ->
             if (playAgain){
