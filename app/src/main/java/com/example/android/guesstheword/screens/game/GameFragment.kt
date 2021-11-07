@@ -53,14 +53,8 @@ class GameFragment : Fragment() {
         // create an instance of the GameViewModel
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
-        // button onclick listeners
-        binding.correctButton.setOnClickListener {
-            viewModel.onCorrect()
-        }
-
-        binding.skipButton.setOnClickListener {
-            viewModel.onSkip()
-        }
+        // bind view model to the layout
+        binding.gameViewModel = viewModel
 
         // observers
         viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
